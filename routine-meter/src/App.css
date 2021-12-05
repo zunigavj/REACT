@@ -15,17 +15,35 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  min-height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 30px;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+.Encabezado{
+  background-color:#282c34;
+
+}
+
+.txtAgregarActividad{
+  margin: 20px 20px 20px 0px;
+  font-size: calc(10px + 2vmin);
+}
+
+.btnAgregarActividad{
+  font-size: calc(10px + 2vmin);
+}
+
+
+.ActivityContainer{
+  text-align: left;
 }
 
 @keyframes App-logo-spin {
