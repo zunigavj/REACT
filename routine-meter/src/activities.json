@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name" : "Actividad uno",
+        "platform" : "SNES",
+        "state" : true
+    },
+    {
+        "id": 2,
+        "name" : "Actividad dos",
+        "platform" : "Sega",
+        "state" : false
+    },
+    {
+        "id": 3,
+        "name" : "Actividad tres",
+        "platform" : "N64",
+        "state" : true
+    },
+    {
+        "id": 4,
+        "name" : "Actividad cuatro",
+        "platform" : "PC",
+        "state" : true
+    },
+    {
+        "id": 5,
+        "name" : "Actividad cinco",
+        "platform" : "N64",
+        "state" : true
+    },
+    {
+        "id": 6,
+        "name" : "Actividad seis",
+        "platform" : "Arcade",
+        "state" : true
+    },
+    {
+        "id": 7,
+        "name" : "Actividad siete",
+        "platform" : "XBOX",
+        "state" : true
+    }
+]

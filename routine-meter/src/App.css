@@ -42,8 +42,11 @@
 }
 
 
-.ActivityContainer{
+.activityContainer{
   text-align: left;
+}
+.advertencia{
+  color: red;
 }
 
 @keyframes App-logo-spin {

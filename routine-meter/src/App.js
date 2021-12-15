@@ -1,8 +1,15 @@
 import logo from './stopwatchLogo.svg';
 import './App.css';
 import Timer from './Components/Timer'
+import activities from './activities.json' 
+import {useState} from 'react'
 
 function App() {
+
+  const[showed, setShowed] = useState(false);
+
+  const showHandler = () => setShowed(!showed);
+
   return (
     <div className="App">
     <header className="App-header">
@@ -11,22 +18,26 @@ function App() {
 	<p>Routine Meter</p>
 	<p>Cause time matter!</p>
       </div>
-      <div className="ActivityContainer">
-	<input className="txtagregaractividad" type="text" placeholder="activity"/>
-	<input className="btnagregaractividad" type="button" value="add"/>
-	  <ul>
-	    <li><Timer/> - activity one</li>
-	    <li><Timer/> - activity two</li>
-	    <li><Timer/> - activity three</li>
-	    <li><Timer/> - activity four</li>
-	    </ul>
+      <div className="activityContainer">
+	<input className="txtAgregarActividad" type="text" placeholder="activity"/>
+	<input className="btnAgregarActividad" type="button" value="add"/>
+	<ul>
+	{
+	  activities.map(({id, name}) => {
+	    return id !== 2 ?
+	      <li key={id}><Timer showHandler = {showHandler} /> - {name} </li> : 
+	      <li key={id} className="advertencia">La segunda actividad no contabiliza</li>;
+	  })
+	}
+	</ul>
+	{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
 	<div>total routine time: </div>
-      </div>
+    </div>
     </header>
     <footer>
       <p>Jason Arturo Zúñiga</p> 
       <p>jason.zunigavj@gmail.com</p> 
-  </footer>
+    </footer>
     </div>
   );
 }
