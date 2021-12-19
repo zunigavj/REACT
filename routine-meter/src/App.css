@@ -37,9 +37,18 @@
   font-size: calc(10px + 2vmin);
 }
 
+.txtEnviarActividad{
+  font-size: calc(10px + 2vmin);
+}
 .btnAgregarActividad{
   font-size: calc(10px + 2vmin);
 }
+
+.btnEnviar{
+  margin-top: 10px;
+  font-size: calc(10px + 2vmin);
+}
+
 
 
 .activityContainer{
@@ -49,11 +58,15 @@
   color: red;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+form{
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  padding: 20px;
+  justify-items: start;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.error{
+  color: red;
+  font-size: calc(5px + 2vmin);
 }
+

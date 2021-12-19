@@ -1,8 +1,10 @@
 import logo from './stopwatchLogo.svg';
 import './App.css';
-import Timer from './Components/Timer'
-import activities from './activities.json' 
-import {useState} from 'react'
+import Timer from './Components/Timer';
+import activities from './activities.json';
+import {useState} from 'react';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
+
 
 function App() {
 
@@ -32,6 +34,44 @@ function App() {
 	</ul>
 	{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
 	<div>total routine time: </div>
+	<Formik
+	  initialValues={{
+	    nombre: '',
+	    secuencia: ''
+	  }}
+	  validate = {(values) => 
+	    {
+	      let errors = {} 
+	      if (!values.nombre)
+	      {
+		errors.nombre = "El nombre es requerido";
+	      }
+	      if (!values.secuencia)
+	      {
+		errors.secuencia = "El número de secuencia es requerido";
+	      }
+	      if(values.secuencia > 100)
+	      {
+		errors.secuencia = "La sencuencia máxima permitida es 100";
+	      }
+	    return errors;
+	    }
+	  }
+	  onSubmit={(values)=> {console.log("Nombre: " + values.nombre + " Secuencia: " + values.secuencia);}}
+	  
+	 >
+	  { ({errors}) => (
+	    <Form > 
+	      <label htmlFor="name">Nombre</label>
+	      <Field type="text" id="nombre" name="nombre" className="txtEnviarActividad" placeholder="Nombre"/> 
+	      <ErrorMessage name="nombre" component = {() => <div className="error">{errors.nombre}</div>} />
+	      <label htmlFor="secuencia">Orden</label>
+	      <Field type="number" id="secuencia" min="1" name="secuencia" className="txtEnviarActividad" placeholder="Secuencia"/> 
+	      <ErrorMessage name="secuencia" component = {() => <div className="error">{errors.secuencia}</div>} />
+	      <button name="enviarFormulario" className="btnEnviar" type="submit">Enviar</button>
+	    </Form>
+	  )}
+	</Formik> 
     </div>
     </header>
     <footer>
