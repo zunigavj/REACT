@@ -2,8 +2,9 @@ import logo from './stopwatchLogo.svg';
 import './App.css';
 import Timer from './Components/Timer';
 import activities from './activities.json';
-import {useState} from 'react';
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import { useState} from 'react';
+import { Formik, Form, Field, ErrorMessage} from 'formik';
+import { Link } from 'react-router-dom' 
 
 
 function App() {
@@ -25,9 +26,10 @@ function App() {
 	<input className="btnAgregarActividad" type="button" value="add"/>
 	<ul>
 	{
-	  activities.map(({id, name}) => {
+	  activities.map(({id, nombre}) => {
 	    return id !== 2 ?
-	      <li key={id}><Timer showHandler = {showHandler} /> - {name} </li> : 
+	      <li key={id}><Timer showHandler = {showHandler} />
+		- <Link to={`activities/${id}`}>{nombre}</Link> </li> : 
 	      <li key={id} className="advertencia">La segunda actividad no contabiliza</li>;
 	  })
 	}
@@ -58,17 +60,16 @@ function App() {
 	    }
 	  }
 	  onSubmit={(values)=> {console.log("Nombre: " + values.nombre + " Secuencia: " + values.secuencia);}}
-	  
 	 >
 	  { ({errors}) => (
 	    <Form > 
-	      <label htmlFor="name">Nombre</label>
+	      <label htmlFor="nombre">Nombre</label>
 	      <Field type="text" id="nombre" name="nombre" className="txtEnviarActividad" placeholder="Nombre"/> 
-	      <ErrorMessage name="nombre" component = {() => <div className="error">{errors.nombre}</div>} />
-	      <label htmlFor="secuencia">Orden</label>
+	      <ErrorMessage nombre="nombre" component = {() => <div className="error">{errors.nombre}</div>} />
+	      <label htmlFor="secuencia">Secuencia</label>
 	      <Field type="number" id="secuencia" min="1" name="secuencia" className="txtEnviarActividad" placeholder="Secuencia"/> 
-	      <ErrorMessage name="secuencia" component = {() => <div className="error">{errors.secuencia}</div>} />
-	      <button name="enviarFormulario" className="btnEnviar" type="submit">Enviar</button>
+	      <ErrorMessage nombre="secuencia" component = {() => <div className="error">{errors.secuencia}</div>} />
+	      <button nombre="enviarFormulario" className="btnEnviar" type="submit">Enviar</button>
 	    </Form>
 	  )}
 	</Formik> 

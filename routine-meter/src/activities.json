@@ -1,44 +1,37 @@
 [
     {
         "id": 1,
-        "name" : "Actividad uno",
-        "platform" : "SNES",
-        "state" : true
+        "nombre" : "Preparar el desayuno",
+        "lugar" : "Casa"
     },
     {
         "id": 2,
-        "name" : "Actividad dos",
-        "platform" : "Sega",
-        "state" : false
+        "nombre" : "Esperar el bus",
+        "lugar" : "Parada de bus"
     },
     {
         "id": 3,
-        "name" : "Actividad tres",
-        "platform" : "N64",
-        "state" : true
+        "nombre" : "Esperar en el bus",
+        "lugar" : "Bus"
     },
     {
         "id": 4,
-        "name" : "Actividad cuatro",
-        "platform" : "PC",
-        "state" : true
+        "nombre" : "Caminar hacia el trabajo",
+        "lugar" : "San José"
     },
     {
         "id": 5,
-        "name" : "Actividad cinco",
-        "platform" : "N64",
-        "state" : true
+        "nombre" : "Realizar la marca",
+        "lugar" : "Trabajo"
     },
     {
         "id": 6,
-        "name" : "Actividad seis",
-        "platform" : "Arcade",
-        "state" : true
+        "nombre" : "Inciar sesión en computadora",
+        "lugar" : "Trabajo"
     },
     {
         "id": 7,
-        "name" : "Actividad siete",
-        "platform" : "XBOX",
-        "state" : true
+        "nombre" : "Realizar marca de salida",
+        "lugar" : "Trabajo"
     }
 ]
