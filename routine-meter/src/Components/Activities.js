@@ -17,7 +17,7 @@ import { useSelector } from 'react-redux'
 	      <li key={id} className="advertencia">La segunda actividad no contabiliza</li>;
 	  })
 	}
-	</ul>
+      </ul>
     )
   }
 

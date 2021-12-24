@@ -16,8 +16,8 @@ const ActivityInput = () => {
 
   return (
     <div>
-    <input className="txtAgregarActividad" type="text" onChange={handleChange} placeholder="Actividad" value={nuevaActividad}/> 
-    <button className="btnAgregarActividad" onClick={handleClick}>Agregar</button>
+      <input className="txtAgregarActividad" type="text" onChange={handleChange} placeholder="Actividad" value={nuevaActividad}/> 
+      <button className="btnAgregarActividad" onClick={handleClick}>Agregar</button>
     </div>
   )
 }
