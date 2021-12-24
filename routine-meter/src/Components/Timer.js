@@ -25,10 +25,10 @@ export default class Timer extends Component {
   render(){
     return(
       <>
-	{this.state.timer}
-	<button onClick={this.iniciarTimer}>Iniciar</button> 
-	<button onClick={this.detenerTimer}>Detener</button> 
-	<button onClick={this.props.showHandler}>Evento en Padre</button> 
+        {this.state.timer}
+        <button onClick={this.iniciarTimer}>Iniciar</button> 
+        <button onClick={this.detenerTimer}>Detener</button> 
+        <button onClick={this.props.showHandler}>Evento en Padre</button> 
       </>
     )
   }

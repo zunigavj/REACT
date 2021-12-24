@@ -9,14 +9,14 @@ import { useSelector } from 'react-redux'
 
     return(
       <ul>
-	{
-	  lasActividades.map(({id, nombre}) => {
-	    return id !== 2 ?
-	      <li key={id}><Timer showHandler = {showHandler} />
-		- <Link to={`activities/${id}`}>{nombre}</Link> </li> : 
-	      <li key={id} className="advertencia">La segunda actividad no contabiliza</li>;
-	  })
-	}
+		{
+		lasActividades.map(({id, nombre}) => {
+			return id !== 2 ?
+			<li key={id}><Timer showHandler = {showHandler} />
+			- <Link to={`activities/${id}`}>{nombre}</Link> </li> : 
+			<li key={id} className="advertencia">La segunda actividad no contabiliza</li>;
+		})
+		}
       </ul>
     )
   }

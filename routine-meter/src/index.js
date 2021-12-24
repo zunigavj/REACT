@@ -12,13 +12,13 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-	<Route path='/' element={<App />}/>
-	<Route path='activities/:id' element={
-	  <Provider store={store}>
-	    <Activity />
-	  </Provider>
-	  }/>
-      </Routes>
+        <Route path='/' element={<App />}/>
+        <Route path='activities/:id' element={
+          <Provider store={store}>
+            <Activity />
+          </Provider>
+          }/>
+      </Routes> 
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
