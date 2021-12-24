@@ -2,7 +2,10 @@ import logo from './stopwatchLogo.svg';
 import './App.css';
 import { useState} from 'react';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-import Actividades from './Components/Activities' 
+import Activities from './Components/Activities' 
+import { Provider } from 'react-redux'
+import store from './store'
+import ActivityInput from './Components/ActivityInput'
 
 
 function App() {
@@ -20,13 +23,12 @@ function App() {
 	<p>Cause time matter!</p>
       </div>
       <div className="activityContainer">
-	<input className="txtAgregarActividad" type="text" placeholder="activity"/>
-	<input className="btnAgregarActividad" type="button" value="add"/>
-	<ul>
 	{
-	  <Actividades showHandler={showHandler} />  
+	  <Provider store = {store}>
+	    <ActivityInput /> 
+	    <Activities showHandler={showHandler} />  
+	  </Provider>
 	}
-	</ul>
 	{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
 	<div>total routine time: </div>
 	<Formik

@@ -5,13 +5,19 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Activity from './Components/Activity'
+import { Provider } from 'react-redux'
+import store from './store'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
 	<Route path='/' element={<App />}/>
-	<Route path='activities/:id' element={<Activity />}/>
+	<Route path='activities/:id' element={
+	  <Provider store={store}>
+	    <Activity />
+	  </Provider>
+	  }/>
       </Routes>
     </Router>
   </React.StrictMode>,
