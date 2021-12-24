@@ -1,10 +1,8 @@
 import logo from './stopwatchLogo.svg';
 import './App.css';
-import Timer from './Components/Timer';
-import activities from './activities.json';
 import { useState} from 'react';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-import { Link } from 'react-router-dom' 
+import Actividades from './Components/Activities' 
 
 
 function App() {
@@ -26,12 +24,7 @@ function App() {
 	<input className="btnAgregarActividad" type="button" value="add"/>
 	<ul>
 	{
-	  activities.map(({id, nombre}) => {
-	    return id !== 2 ?
-	      <li key={id}><Timer showHandler = {showHandler} />
-		- <Link to={`activities/${id}`}>{nombre}</Link> </li> : 
-	      <li key={id} className="advertencia">La segunda actividad no contabiliza</li>;
-	  })
+	  <Actividades showHandler={showHandler} />  
 	}
 	</ul>
 	{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
