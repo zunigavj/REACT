@@ -2,10 +2,11 @@ import logo from './stopwatchLogo.svg';
 import './App.css';
 import { useState} from 'react';
 import { Formik, Form, Field, ErrorMessage} from 'formik';
-import Activities from './Components/Activities' 
 import { Provider } from 'react-redux'
 import store from './store'
 import ActivityInput from './Components/ActivityInput'
+import ConTimer from './Components/ConTimer'
+import SinTimer from './Components/SinTimer'
 
 
 function App() {
@@ -18,18 +19,19 @@ function App() {
     <div className="App">
     <header className="App-header">
       <div>
-		<img src={logo}  alt="logo" />
-		<p>Routine Meter</p>
-		<p>Cause time matter!</p>
+	<img src={logo}  alt="logo" />
+	<p>Routine Meter</p>
+	<p>Cause time matter!</p>
       </div>
       <div className="activityContainer">
-		{
-		<Provider store = {store}>
-			<ActivityInput /> 
-			<Activities showHandler={showHandler} />  
-		</Provider>
-		}
+	{
+	  <Provider store = {store}>
+	    <ActivityInput /> 
+	    <ConTimer showHandler={showHandler}/>
 		{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
+	    <SinTimer />
+	  </Provider>
+	}
 		<div>total routine time: </div>
 		<Formik
 			initialValues={{
