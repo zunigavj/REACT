@@ -24,14 +24,17 @@ function App() {
 	<p>Cause time matter!</p>
       </div>
       <div className="activityContainer">
-	{
-	  <Provider store = {store}>
-	    <ActivityInput /> 
-	    <ConTimer showHandler={showHandler}/>
-		{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
-	    <SinTimer />
-	  </Provider>
-	}
+		{
+		<Provider store = {store}>
+			<ActivityInput /> 
+		  <h3>Con Timer</h3>
+			<ConTimer showHandler={showHandler}/>
+			{showed && <div>Se elevó el estado desde el componente Timer.js</div>}
+		  
+		  <h3>Sin Timer</h3>
+			<SinTimer />
+		</Provider>
+		}
 		<div>total routine time: </div>
 		<Formik
 			initialValues={{

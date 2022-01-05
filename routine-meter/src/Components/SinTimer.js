@@ -5,7 +5,7 @@ const ConTimer = (ComponenteOriginal) => {
   return class extends Component {
     render(){
       return (
-	<ComponenteOriginal showTimer = {false}/>
+        <ComponenteOriginal showTimer = {false}/>
       )
     }
   }

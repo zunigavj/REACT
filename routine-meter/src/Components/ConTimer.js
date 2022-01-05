@@ -5,7 +5,7 @@ const ConTimer = (ComponenteOriginal) => {
   return class extends Component {
     render(){
       return (
-	<ComponenteOriginal showHandler = {this.props.showHandler} showTimer = {true}/>
+        <ComponenteOriginal showHandler = {this.props.showHandler} showTimer = {true}/>
       )
     }
   }
